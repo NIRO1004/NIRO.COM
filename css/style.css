@@ -9,33 +9,19 @@
    ========================================================= */
 
 :root {
-
     --bg: #07090c;
-
     --bg-secondary: #0b0e12;
-
     --card: #101419;
-
     --card-hover: #151a20;
-
     --white: #f5f5f5;
-
     --text: #c4cbd3;
-
     --muted: #7d8792;
-
     --red: #ff003c;
-
     --red-dark: #c80030;
-
     --border: rgba(255,255,255,0.12);
-
     --max-width: 1200px;
-
     --header-height: 72px;
-
     --transition: 0.25s ease;
-
 }
 
 
@@ -44,56 +30,34 @@
    ========================================================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
-
 body {
-
     background: var(--bg);
-
     color: var(--white);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     line-height: 1.6;
-
     overflow-x: hidden;
-
 }
-
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
 
-
 img {
-
     max-width: 100%;
-
     display: block;
-
 }
 
 
@@ -102,19 +66,13 @@ img {
    ========================================================= */
 
 body::before {
-
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: -10;
 
     background:
-
         repeating-linear-gradient(
             135deg,
             transparent,
@@ -122,7 +80,6 @@ body::before {
             rgba(255,0,60,0.025) 91px,
             transparent 92px
         );
-
 }
 
 
@@ -131,7 +88,6 @@ body::before {
    ========================================================= */
 
 .container {
-
     width:
         min(
             var(--max-width),
@@ -139,7 +95,6 @@ body::before {
         );
 
     margin: 0 auto;
-
 }
 
 
@@ -148,23 +103,15 @@ body::before {
    ========================================================= */
 
 .site-header {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: var(--header-height);
-
     z-index: 1000;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 40px;
@@ -177,95 +124,60 @@ body::before {
 
     backdrop-filter:
         blur(14px);
-
 }
 
 
 /* LOGO */
 
 .brand {
-
     font-size: 30px;
-
     font-weight: 800;
-
     letter-spacing: -1px;
-
 }
 
-
 .brand span {
-
     color: var(--red);
-
 }
 
 
 /* NAVEGACIÓN */
 
 .site-header nav {
-
     display: flex;
-
     align-items: center;
-
     gap: 30px;
-
 }
-
 
 .site-header nav a {
-
     position: relative;
-
     color: #c8cdd3;
-
     font-size: 14px;
-
     transition: var(--transition);
-
 }
-
 
 .site-header nav a:hover {
-
     color: var(--red);
-
 }
-
 
 .site-header nav a:not(.cv-button)::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: -9px;
-
     width: 0;
-
     height: 2px;
-
     background: var(--red);
-
     transition: var(--transition);
-
 }
 
-
 .site-header nav a:not(.cv-button):hover::after {
-
     width: 100%;
-
 }
 
 
 /* BOTÓN CV */
 
 .cv-button {
-
     padding:
         8px 22px;
 
@@ -279,18 +191,14 @@ body::before {
     color: white !important;
 
     transition: var(--transition);
-
 }
 
-
 .cv-button:hover {
-
     background: var(--red);
 
     box-shadow:
         0 0 25px
         rgba(255,0,60,0.25);
-
 }
 
 
@@ -299,13 +207,10 @@ body::before {
    ========================================================= */
 
 .hero {
-
     position: relative;
-
     min-height: 100vh;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
@@ -313,7 +218,6 @@ body::before {
     padding-top: var(--header-height);
 
     background:
-
         linear-gradient(
             90deg,
             rgba(5,7,10,0.95) 0%,
@@ -332,26 +236,17 @@ body::before {
         url("../assets/img/hero.png");
 
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
 }
 
-
 .hero::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     pointer-events: none;
 
     background:
-
         radial-gradient(
             circle at 75% 55%,
             rgba(255,0,60,0.20),
@@ -363,14 +258,10 @@ body::before {
             transparent 60%,
             var(--bg) 100%
         );
-
 }
 
-
 .hero-content {
-
     position: relative;
-
     z-index: 2;
 
     width:
@@ -382,7 +273,6 @@ body::before {
     margin: 0 auto;
 
     padding: 100px 0;
-
 }
 
 
@@ -391,11 +281,8 @@ body::before {
    ========================================================= */
 
 .section-number {
-
     display: flex;
-
     align-items: center;
-
     gap: 14px;
 
     margin-bottom: 25px;
@@ -403,24 +290,18 @@ body::before {
     color: var(--red);
 
     font-size: 13px;
-
     font-weight: bold;
 
     letter-spacing: 2px;
-
 }
 
-
 .section-number span {
-
     width: 32px;
-
     height: 5px;
 
     display: block;
 
     background: var(--red);
-
 }
 
 
@@ -429,17 +310,14 @@ body::before {
    ========================================================= */
 
 .eyebrow {
-
     color: #aeb6c0;
 
     font-size: 16px;
-
     font-weight: 600;
 
     letter-spacing: 2px;
 
     margin-bottom: 10px;
-
 }
 
 
@@ -448,7 +326,6 @@ body::before {
    ========================================================= */
 
 .hero h1 {
-
     max-width: 900px;
 
     font-size:
@@ -465,14 +342,10 @@ body::before {
     letter-spacing: -3px;
 
     margin-bottom: 25px;
-
 }
 
-
 .hero h1 strong {
-
     color: var(--red);
-
 }
 
 
@@ -481,7 +354,6 @@ body::before {
    ========================================================= */
 
 .hero-description {
-
     max-width: 520px;
 
     color: var(--text);
@@ -489,7 +361,6 @@ body::before {
     font-size: 17px;
 
     margin-bottom: 30px;
-
 }
 
 
@@ -498,24 +369,18 @@ body::before {
    ========================================================= */
 
 .hero-buttons {
-
     display: flex;
 
     gap: 15px;
 
     margin-bottom: 35px;
-
 }
 
-
 .btn {
-
     min-height: 48px;
 
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 8px;
@@ -525,25 +390,17 @@ body::before {
     border-radius: 5px;
 
     font-size: 14px;
-
     font-weight: 700;
 
     transition: var(--transition);
-
 }
-
 
 .btn-primary {
-
     background: var(--red);
-
     color: white;
-
 }
 
-
 .btn-primary:hover {
-
     background: #e60035;
 
     transform:
@@ -552,29 +409,21 @@ body::before {
     box-shadow:
         0 10px 30px
         rgba(255,0,60,0.25);
-
 }
 
-
 .btn-outline {
-
     border:
         1px solid white;
 
     color: white;
-
 }
 
-
 .btn-outline:hover {
-
     border-color: var(--red);
-
     color: var(--red);
 
     transform:
         translateY(-2px);
-
 }
 
 
@@ -583,32 +432,24 @@ body::before {
    ========================================================= */
 
 .quick-links {
-
     display: flex;
-
     flex-wrap: wrap;
 
     gap: 10px;
 
     max-width: 850px;
-
 }
 
-
 .quick-link {
-
     min-width: 105px;
-
     min-height: 72px;
 
     padding: 10px 15px;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 5px;
@@ -625,32 +466,23 @@ body::before {
         blur(8px);
 
     transition: var(--transition);
-
 }
 
-
 .quick-link i {
-
     color: var(--red);
 
     font-size: 24px;
 
     transition: var(--transition);
-
 }
 
-
 .quick-link span {
-
     color: var(--white);
 
     font-size: 11px;
-
 }
 
-
 .quick-link:hover {
-
     border-color: var(--red);
 
     background:
@@ -658,15 +490,11 @@ body::before {
 
     transform:
         translateY(-4px);
-
 }
 
-
 .quick-link:hover i {
-
     transform:
         scale(1.15);
-
 }
 
 
@@ -675,7 +503,6 @@ body::before {
    ========================================================= */
 
 .section {
-
     position: relative;
 
     padding: 120px 0;
@@ -684,7 +511,6 @@ body::before {
         1px solid var(--border);
 
     background:
-
         radial-gradient(
             circle at 90% 20%,
             rgba(255,0,60,0.07),
@@ -692,12 +518,9 @@ body::before {
         ),
 
         var(--bg);
-
 }
 
-
 .section h2 {
-
     font-size:
         clamp(
             48px,
@@ -710,12 +533,9 @@ body::before {
     letter-spacing: -2px;
 
     margin-bottom: 45px;
-
 }
 
-
 .section-description {
-
     max-width: 600px;
 
     color: var(--muted);
@@ -723,7 +543,6 @@ body::before {
     margin-top: -25px;
 
     margin-bottom: 35px;
-
 }
 
 
@@ -732,7 +551,6 @@ body::before {
    ========================================================= */
 
 .about-content {
-
     display: grid;
 
     grid-template-columns:
@@ -741,12 +559,9 @@ body::before {
     gap: 30px;
 
     align-items: stretch;
-
 }
 
-
 .about-text {
-
     padding:
         25px 0 25px 25px;
 
@@ -756,19 +571,13 @@ body::before {
     color: var(--text);
 
     font-size: 16px;
-
 }
-
 
 .about-text p + p {
-
     margin-top: 20px;
-
 }
 
-
 .about-photo {
-
     min-height: 330px;
 
     border:
@@ -777,7 +586,6 @@ body::before {
     overflow: hidden;
 
     background:
-
         linear-gradient(
             rgba(5,7,10,0.25),
             rgba(5,7,10,0.45)
@@ -786,9 +594,7 @@ body::before {
         url("../assets/img/sobre%20mi.png");
 
     background-size: cover;
-
     background-position: center;
-
 }
 
 
@@ -797,19 +603,15 @@ body::before {
    ========================================================= */
 
 .projects {
-
     display: grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
     gap: 18px;
-
 }
 
-
 .project-card {
-
     overflow: hidden;
 
     background:
@@ -825,12 +627,9 @@ body::before {
     border-radius: 7px;
 
     transition: var(--transition);
-
 }
 
-
 .project-card:hover {
-
     transform:
         translateY(-5px);
 
@@ -840,7 +639,6 @@ body::before {
     box-shadow:
         0 15px 40px
         rgba(0,0,0,0.35);
-
 }
 
 
@@ -849,13 +647,10 @@ body::before {
    ========================================================= */
 
 .project-image {
-
     height: 180px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     position: relative;
@@ -865,7 +660,6 @@ body::before {
     color: white;
 
     font-size: 25px;
-
     font-weight: 800;
 
     letter-spacing: 2px;
@@ -874,14 +668,13 @@ body::before {
         1px solid var(--border);
 
     background-size: cover;
-
     background-position: center;
-
 }
 
 
-.project-image::after {
+/* OSCURECER IMAGEN */
 
+.project-image::after {
     content: "";
 
     position: absolute;
@@ -893,105 +686,116 @@ body::before {
             rgba(0,0,0,0.15),
             rgba(0,0,0,0.60)
         );
-
 }
 
 
-.project-image span {
+/* TEXTO SOBRE LA IMAGEN */
 
+.project-image span {
     position: relative;
 
     z-index: 2;
 
-}
+    text-align: center;
 
+    color: white;
 
-.image-renta-car {
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.9);
 
-    background-image:
-        url("../assets/img/renta%20car.png");
-
-}
-
-
-.image-portfolio {
-
-    background-image:
-        url("../assets/img/portafolio.png");
-
-}
-
-
-.image-database {
-
-    background-image:
-        url("../assets/img/database.png");
-
-}
-
-
-.image-minecraft {
-
-    background-image:
-        url("../assets/img/minecraft.png");
-
-}
-
-
-.image-arduino {
-
-    background-image:
-        url("../assets/img/arduino.png");
-
+    transition:
+        transform var(--transition),
+        color var(--transition);
 }
 
 
 /* =========================================================
-   17. INFORMACIÓN PROYECTOS
+   17. IMÁGENES INDIVIDUALES
+   ========================================================= */
+
+
+/* SHOES TO GO */
+
+.image-shoes {
+    background-image:
+        url("../assets/img/stgg.png");
+}
+
+
+/* SISTEMA BIBLIOTECA */
+
+.image-biblioteca {
+    background-image:
+        url("../assets/img/biblioteca.png");
+}
+
+
+/* PORTAFOLIO */
+
+.image-portfolio {
+    background-image:
+        url("../assets/img/portafolio.png");
+}
+
+
+/* BASE DE DATOS */
+
+.image-database {
+    background-image:
+        url("../assets/img/database.png");
+}
+
+
+/* MINECRAFT */
+
+.image-minecraft {
+    background-image:
+        url("../assets/img/minecraft.png");
+}
+
+
+/* ARDUINO */
+
+.image-arduino {
+    background-image:
+        url("../assets/img/arduino.png");
+}
+
+
+/* =========================================================
+   18. INFORMACIÓN PROYECTOS
    ========================================================= */
 
 .project-info {
-
     padding: 18px;
-
 }
 
-
 .project-info h3 {
-
     font-size: 18px;
 
     margin-bottom: 7px;
-
 }
 
-
 .project-info p {
-
     color: var(--muted);
 
     font-size: 13px;
 
     margin-bottom: 15px;
-
 }
 
 
 /* TAGS */
 
 .tags {
-
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 6px;
-
 }
 
-
 .tags span {
-
     padding:
         3px 8px;
 
@@ -1003,26 +807,22 @@ body::before {
     color: #adb5bd;
 
     font-size: 10px;
-
 }
 
 
 /* =========================================================
-   18. FOTOGRAFÍA
+   19. FOTOGRAFÍA
    ========================================================= */
 
 .photography {
-
     min-height: 70vh;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
 
     background:
-
         linear-gradient(
             90deg,
             rgba(5,7,10,0.90),
@@ -1033,29 +833,23 @@ body::before {
         url("../assets/img/fotografia.png");
 
     background-size: cover;
-
     background-position: center;
-
 }
 
-
 .photography p:not(.eyebrow) {
-
     max-width: 500px;
 
     color: var(--text);
 
     font-size: 17px;
-
 }
 
 
 /* =========================================================
-   19. CONTACTO
+   20. CONTACTO
    ========================================================= */
 
 .contact-links {
-
     display: grid;
 
     grid-template-columns:
@@ -1064,18 +858,13 @@ body::before {
     gap: 12px;
 
     margin-top: 40px;
-
 }
 
-
 .contact-links a {
-
     min-height: 160px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
@@ -1095,12 +884,9 @@ body::before {
     border-radius: 7px;
 
     transition: var(--transition);
-
 }
 
-
 .contact-links i {
-
     color: var(--red);
 
     font-size: 30px;
@@ -1108,32 +894,23 @@ body::before {
     margin-bottom: 5px;
 
     transition: var(--transition);
-
 }
 
-
 .contact-links span {
-
     color: var(--white);
 
     font-size: 15px;
 
     font-weight: 700;
-
 }
 
-
 .contact-links small {
-
     color: var(--muted);
 
     font-size: 11px;
-
 }
 
-
 .contact-links a:hover {
-
     border-color: var(--red);
 
     transform:
@@ -1145,24 +922,19 @@ body::before {
     box-shadow:
         0 10px 30px
         rgba(255,0,60,0.08);
-
 }
 
-
 .contact-links a:hover i {
-
     transform:
         scale(1.15);
-
 }
 
 
 /* =========================================================
-   20. FOOTER
+   21. FOOTER
    ========================================================= */
 
 footer {
-
     display: grid;
 
     grid-template-columns:
@@ -1184,73 +956,54 @@ footer {
     color: var(--muted);
 
     font-size: 12px;
-
 }
 
 
 /* LOGO FOOTER */
 
 .footer-brand {
-
     display: flex;
 
     flex-direction: column;
 
     gap: 4px;
-
 }
 
-
 .footer-logo {
-
     color: var(--white);
 
     font-size: 22px;
 
     font-weight: 800;
-
 }
-
 
 .footer-logo span {
-
     color: var(--red);
-
 }
 
-
 .footer-brand p {
-
     color: var(--muted);
 
     font-size: 12px;
-
 }
 
 
 /* REDES FOOTER */
 
 .footer-social {
-
     display: flex;
 
     align-items: center;
 
     gap: 12px;
-
 }
 
-
 .footer-social a {
-
     width: 38px;
-
     height: 38px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border:
@@ -1261,19 +1014,13 @@ footer {
     color: var(--muted);
 
     transition: var(--transition);
-
 }
-
 
 .footer-social i {
-
     font-size: 16px;
-
 }
 
-
 .footer-social a:hover {
-
     color: var(--red);
 
     border-color:
@@ -1284,252 +1031,167 @@ footer {
 
     background:
         rgba(255,0,60,0.06);
-
 }
 
 
 /* COPYRIGHT */
 
 .footer-copy {
-
     text-align: right;
-
 }
-
 
 .footer-copy p + p {
-
     margin-top: 4px;
-
 }
-
 
 .footer-copy p:first-child {
-
     color: #a5adb7;
-
 }
 
-
 .footer-copy p:last-child {
-
     color: var(--muted);
-
 }
 
 
 /* =========================================================
-   21. TABLET
+   22. TABLET
    ========================================================= */
 
 @media (max-width:1000px) {
 
-
     .site-header {
-
         padding:
             0 25px;
-
     }
-
 
     .site-header nav {
-
         gap: 18px;
-
     }
-
 
     .projects {
-
         grid-template-columns:
             repeat(2,1fr);
-
     }
-
 
     .contact-links {
-
         grid-template-columns:
             repeat(3,1fr);
-
     }
-
 }
 
 
 /* =========================================================
-   22. MOBILE
+   23. MOBILE
    ========================================================= */
 
 @media (max-width:700px) {
 
-
     :root {
-
         --header-height: 65px;
-
     }
-
 
     .container {
-
         width:
             calc(100% - 30px);
-
     }
 
-
     .site-header {
-
         height:
             var(--header-height);
 
         padding:
             0 20px;
-
     }
-
 
     .brand {
-
         font-size: 27px;
-
     }
-
 
     .site-header nav {
-
         display: none;
-
     }
 
-
     .hero {
-
         min-height: 100svh;
 
         align-items: flex-end;
 
         background-position:
             65% center;
-
     }
 
-
     .hero-content {
-
         width:
             calc(100% - 30px);
 
         padding-bottom:
             65px;
-
     }
 
-
     .hero h1 {
-
         font-size:
             clamp(
                 48px,
                 15vw,
                 70px
             );
-
     }
-
 
     .hero-description {
-
         font-size: 15px;
-
     }
-
 
     .hero-buttons {
-
         flex-direction: column;
-
     }
-
 
     .btn {
-
         width: 100%;
-
     }
 
-
     .quick-links {
-
         display: grid;
 
         grid-template-columns:
             repeat(2,1fr);
 
         gap: 8px;
-
     }
-
 
     .quick-link {
-
         min-width: 0;
-
         min-height: 65px;
-
     }
-
 
     .section {
-
         padding:
             85px 0;
-
     }
-
 
     .section h2 {
-
         font-size: 50px;
-
     }
-
 
     .about-content {
-
         grid-template-columns:
             1fr;
-
     }
-
 
     .about-photo {
-
         min-height: 280px;
-
     }
-
 
     .projects {
-
         grid-template-columns:
             1fr;
-
     }
-
 
     .contact-links {
-
         grid-template-columns:
             repeat(2,1fr);
-
     }
 
-
     footer {
-
         grid-template-columns:
             1fr;
 
@@ -1537,55 +1199,37 @@ footer {
 
         padding:
             30px 20px;
-
     }
-
 
     .footer-social {
-
         justify-content:
             flex-start;
-
     }
-
 
     .footer-copy {
-
         text-align:
             left;
-
     }
-
 }
 
 
 /* =========================================================
-   23. TELÉFONOS PEQUEÑOS
+   24. TELÉFONOS PEQUEÑOS
    ========================================================= */
 
 @media (max-width:450px) {
 
-
     .quick-links {
-
         grid-template-columns:
             repeat(2,1fr);
-
     }
-
 
     .contact-links {
-
         grid-template-columns:
             1fr;
-
     }
-
 
     .hero h1 {
-
         font-size: 48px;
-
     }
-
 }
