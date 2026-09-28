@@ -134,12 +134,14 @@ img {
     margin-bottom:10px;
     border:1px solid var(--border);
     border-radius:8px;
+    background:transparent;
     transition:.25s;
 }
 
 .sidebar-project:hover {
-    border-color:var(--red);
-    transform:translateX(4px);
+    border-color:var(--border);
+    background:rgba(255,255,255,.03);
+    transform:translateX(3px);
 }
 
 .sidebar-project.active {
@@ -191,7 +193,7 @@ img {
     align-items:center;
     gap:10px;
     margin-bottom:15px;
-    color:#6fb7ff;
+    color:#9da6b3;
     font-size:14px;
     transition:.25s;
 }

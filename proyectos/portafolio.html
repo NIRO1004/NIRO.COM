@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sistema Biblioteca - Proyecto desarrollado por Niro.">
-    <title>Niro | Sistema Biblioteca</title>
+    <meta name="description" content="Portafolio Web - Proyecto desarrollado por Niro.">
+    <title>Niro | Portafolio Web</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../css/BIB.css">
+    <link rel="stylesheet" href="../css/POR.css">
     <link rel="icon" type="image/png" href="../assets/img/logo.png">
 </head>
 
@@ -27,10 +27,7 @@
         <a href="../index.html#contacto">Contacto</a>
     </nav>
 
-    <a href="../assets/docs/Niels%20Curriculum.pdf"
-       class="cv-button"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a href="../assets/docs/Niels%20Curriculum.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
         CV <i class="fa-solid fa-download"></i>
     </a>
 
@@ -46,8 +43,6 @@
             <span>PROYECTOS</span>
         </div>
 
-
-        <!-- SHOES TO GO -->
 
         <a href="shoes-to-go.html" class="sidebar-project active">
             <div class="sidebar-image" style="background-image:url('../assets/img/stgg.png');"></div>
@@ -80,16 +75,25 @@
         </a>
 
 
-        <!-- MINECRAFT -->
+        <a href="base-datos.html" class="sidebar-project">
 
-        <a href="minecraft.html" class="sidebar-project">
-
-            <div class="sidebar-image"
-                 style="background-image:url('../assets/img/minecraft.png');">
-            </div>
+            <div class="sidebar-image" style="background-image:url('../assets/img/database.png');"></div>
 
             <div class="sidebar-info">
                 <span class="sidebar-number">04</span>
+                <h3>Base de Datos</h3>
+                <p>Proyectos y laboratorios SQL Server.</p>
+            </div>
+
+        </a>
+
+
+        <a href="minecraft.html" class="sidebar-project">
+
+            <div class="sidebar-image" style="background-image:url('../assets/img/minecraft.png');"></div>
+
+            <div class="sidebar-info">
+                <span class="sidebar-number">05</span>
                 <h3>Modpack V4</h3>
                 <p>Minecraft y modificaciones.</p>
             </div>
@@ -97,16 +101,12 @@
         </a>
 
 
-        <!-- ARDUINO -->
-
         <a href="arduino.html" class="sidebar-project">
 
-            <div class="sidebar-image"
-                 style="background-image:url('../assets/img/arduino.png');">
-            </div>
+            <div class="sidebar-image" style="background-image:url('../assets/img/arduino.png');"></div>
 
             <div class="sidebar-info">
-                <span class="sidebar-number">05</span>
+                <span class="sidebar-number">06</span>
                 <h3>Proyectos Arduino</h3>
                 <p>Sensores y automatización.</p>
             </div>
@@ -118,52 +118,60 @@
 
     <section class="project-main">
 
-        <!-- VOLVER -->
-
         <a href="../index.html#proyectos" class="back-link">
             <i class="fa-solid fa-arrow-left"></i>
             Volver a proyectos
         </a>
 
 
-        <!-- NUMERO -->
-
         <div class="project-number">
-            02
+            03
         </div>
 
 
-        <!-- TITULO -->
-
         <h1 class="project-title">
-            SISTEMA BIBLIOTECA
+            PORTAFOLIO WEB
         </h1>
 
 
         <p class="project-subtitle">
-            Sistema web para la gestión de una biblioteca
+            Mi página personal y portafolio de proyectos
         </p>
 
 
-        <!-- TECNOLOGIAS -->
-
         <div class="technology-tags">
-            <span>C#</span>
-            <span>ASP.NET Core</span>
-            <span>SQL Server</span>
-            <span>Entity Framework</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>GitHub Pages</span>
         </div>
 
 
-        <!-- BOTONES -->
-
         <div class="project-buttons">
 
-            <a href="https://github.com/NIRO1004/SistemaBiblioteca"
+            <a href="https://niro1004.github.io/NIRO.COM/"
                class="project-button primary"
-               id="project-link">
+               id="project-link"
+               target="_blank"
+               rel="noopener noreferrer">
 
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                <div>
+                    <strong>Ver proyecto</strong>
+                    <small>NIRO.COM</small>
+                </div>
+
+            </a>
+
+
+            <a href="https://github.com/NIRO1004/NIRO.COM"
+               class="project-button"
+               id="github-link"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <i class="fa-brands fa-github"></i>
 
                 <div>
                     <strong>Ver código</strong>
@@ -172,26 +180,21 @@
 
             </a>
 
-
         </div>
 
-
-        <!-- HERO -->
 
         <div class="project-hero">
 
             <div class="project-hero-overlay">
 
                 <h2>
-                    SISTEMA BIBLIOTECA
+                    PORTAFOLIO WEB
                 </h2>
 
             </div>
 
         </div>
 
-
-        <!-- INFORMACION -->
 
         <div class="info-grid">
 
@@ -206,9 +209,16 @@
                 </h2>
 
                 <p>
-                    Sistema web desarrollado para la gestión de una biblioteca,
-                    permitiendo organizar la información relacionada con libros,
-                    autores, categorías, usuarios y préstamos.
+                    Este proyecto corresponde a mi portafolio web personal,
+                    desarrollado para reunir en un solo sitio mis proyectos,
+                    información personal, fotografía, experiencia y diferentes
+                    formas de contacto.
+                </p>
+
+                <p style="margin-top:15px;">
+                    El sitio funciona como una presentación personal y como un
+                    espacio donde puedo mostrar los diferentes trabajos y
+                    proyectos que he desarrollado durante mi formación.
                 </p>
 
             </article>
@@ -224,9 +234,10 @@
                 </h2>
 
                 <p>
-                    Desarrollar un sistema que permita administrar de manera
-                    organizada los diferentes elementos que forman parte de
-                    una biblioteca.
+                    Crear una plataforma personal para mostrar mis proyectos,
+                    habilidades y experiencia como estudiante y desarrollador,
+                    manteniendo toda la información organizada y accesible
+                    desde un solo sitio web.
                 </p>
 
             </article>
@@ -244,23 +255,23 @@
                 <div class="technology-list">
 
                     <div class="technology-item">
-                        <i class="fa-solid fa-code"></i>
-                        C#
+                        <i class="fa-brands fa-html5"></i>
+                        HTML
                     </div>
 
                     <div class="technology-item">
-                        <i class="fa-solid fa-globe"></i>
-                        ASP.NET Core
+                        <i class="fa-brands fa-css3-alt"></i>
+                        CSS
                     </div>
 
                     <div class="technology-item">
-                        <i class="fa-solid fa-database"></i>
-                        SQL Server
+                        <i class="fa-brands fa-js"></i>
+                        JavaScript
                     </div>
 
                     <div class="technology-item">
-                        <i class="fa-solid fa-layer-group"></i>
-                        Entity Framework
+                        <i class="fa-brands fa-github"></i>
+                        GitHub Pages
                     </div>
 
                 </div>
@@ -281,27 +292,47 @@
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Gestión de libros
+                        Página de inicio
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Gestión de autores
+                        Sección Sobre mí
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Gestión de categorías
+                        Sección de proyectos
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Gestión de usuarios
+                        Páginas individuales de proyectos
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Gestión de préstamos
+                        Galería de fotografía
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Sección de contacto
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Acceso al CV
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Enlaces a redes sociales
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Diseño responsive
                     </li>
 
                 </ul>
@@ -309,7 +340,7 @@
             </article>
 
 
-            <!-- APRENDIZAJE -->
+            <!-- LO QUE APRENDI -->
 
             <article class="info-card">
 
@@ -322,22 +353,32 @@
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Desarrollo de aplicaciones con ASP.NET Core
+                        Organización de un proyecto web completo
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Uso de Entity Framework
+                        Diseño responsive
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Integración con SQL Server
+                        Separación de HTML, CSS y JavaScript
                     </li>
 
                     <li>
                         <i class="fa-solid fa-check"></i>
-                        Organización de un proyecto MVC
+                        Navegación entre páginas
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Publicación mediante GitHub Pages
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Organización de recursos e imágenes
                     </li>
 
                 </ul>
@@ -345,7 +386,7 @@
             </article>
 
 
-            <!-- GALERIA -->
+            <!-- VISTAS DEL PROYECTO -->
 
             <article class="info-card full">
 
@@ -357,17 +398,13 @@
                 <div class="project-gallery">
 
                     <div class="gallery-item">
-
-                        <img src="../assets/img/bib1.png"
-                             alt="Vista principal del Sistema Biblioteca">
-
+                        <img src="../assets/img/portafolio.png"
+                             alt="Vista principal del Portafolio Web">
                     </div>
 
                     <div class="gallery-item">
-
-                        <img src="../assets/img/bib2.png"
-                             alt="Vista principal del Sistema Biblioteca">
-
+                        <img src="../assets/img/hero.png"
+                             alt="Vista del inicio del Portafolio Web">
                     </div>
 
                 </div>
@@ -400,7 +437,7 @@
                     <strong>Planificación</strong>
 
                     <p>
-                        Definición de la idea y estructura del sistema.
+                        Definición de la estructura y contenido del portafolio.
                     </p>
 
                 </div>
@@ -415,7 +452,7 @@
                     <strong>Diseño</strong>
 
                     <p>
-                        Diseño de la estructura y organización de la aplicación.
+                        Diseño de la interfaz, secciones y elementos visuales.
                     </p>
 
                 </div>
@@ -430,7 +467,7 @@
                     <strong>Desarrollo</strong>
 
                     <p>
-                        Implementación del sistema utilizando C# y ASP.NET Core.
+                        Implementación utilizando HTML, CSS y JavaScript.
                     </p>
 
                 </div>
@@ -442,10 +479,10 @@
                         04
                     </div>
 
-                    <strong>Base de datos</strong>
+                    <strong>Integración</strong>
 
                     <p>
-                        Integración y gestión de información mediante SQL Server.
+                        Organización de proyectos, imágenes, enlaces y recursos.
                     </p>
 
                 </div>
@@ -457,10 +494,10 @@
                         05
                     </div>
 
-                    <strong>Resultado</strong>
+                    <strong>Publicación</strong>
 
                     <p>
-                        Sistema de biblioteca funcional presentado en el portafolio.
+                        Publicación del portafolio mediante GitHub Pages.
                     </p>
 
                 </div>
@@ -475,8 +512,6 @@
 
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -499,39 +534,28 @@
            target="_blank"
            rel="noopener noreferrer"
            aria-label="GitHub">
-
             <i class="fa-brands fa-github"></i>
-
         </a>
-
 
         <a href="https://www.instagram.com/nielsroldan/"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Instagram">
-
             <i class="fa-brands fa-instagram"></i>
-
         </a>
-
 
         <a href="https://discord.gg/T9t3En6EW"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Discord">
-
             <i class="fa-brands fa-discord"></i>
-
         </a>
-
 
         <a href="https://wa.me/50685936114"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="WhatsApp">
-
             <i class="fa-brands fa-whatsapp"></i>
-
         </a>
 
     </div>
@@ -552,7 +576,7 @@
 </footer>
 
 
-<script src="../js/BIB.js"></script>
+<script src="../js/POR.js"></script>
 
 </body>
 </html>
