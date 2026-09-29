@@ -175,3 +175,79 @@ document.addEventListener(
 
     }
 );
+
+/* PHOTOGRAPHY PREVIEW */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".photo-slide");
+    const thumbs = document.querySelectorAll(".photo-thumb");
+    const dots = document.querySelectorAll(".photo-dot");
+    const categories = document.querySelectorAll(".photo-category");
+    const prev = document.querySelector(".photo-prev");
+    const next = document.querySelector(".photo-next");
+
+    if (!slides.length) return;
+
+    let current = 0;
+
+    function updateGallery(index) {
+        current = index;
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === current);
+        });
+
+        thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle("active", i === current);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === current);
+        });
+    }
+
+    next.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        updateGallery(current);
+    });
+
+    prev.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        updateGallery(current);
+    });
+
+    thumbs.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => {
+            updateGallery(index);
+        });
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            updateGallery(index);
+        });
+    });
+
+    categories.forEach(category => {
+        category.addEventListener("click", () => {
+            categories.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            category.classList.add("active");
+
+            const selectedCategory = category.dataset.category;
+
+            slides.forEach(slide => {
+                if (
+                    selectedCategory === "todos" ||
+                    slide.dataset.category === selectedCategory
+                ) {
+                    slide.style.display = "";
+                } else {
+                    slide.style.display = "none";
+                }
+            });
+        });
+    });
+});
