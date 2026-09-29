@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Niro | Fotografía</title>
+
+    <link rel="stylesheet" href="css/fotografia.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="photo-header">
+
+    <a href="index.html" class="photo-logo">
+        <img src="assets/img/logo.png" alt="NIRO">
+    </a>
+
+    <nav class="photo-nav">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#sobre-mi">Sobre mí</a>
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="fotografia.html" class="active">Fotografía</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <a href="assets/docs/Niels Curriculum.pdf" class="photo-cv" target="_blank">
+        CV
+        <i class="fa-solid fa-download"></i>
+    </a>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="photo-hero">
+
+        <div class="photo-hero-overlay">
+
+            <div class="photo-hero-content">
+
+                <div class="section-number">
+                    <span></span>
+                    04
+                </div>
+
+                <p class="eyebrow">GALERÍA PERSONAL</p>
+
+                <h1>FOTOGRAFÍA</h1>
+
+                <p class="hero-description">
+                    Autos, paisajes y momentos que me gusta capturar.
+                    Una colección de imágenes que cuentan historias
+                    a través de diferentes lugares, estilos y perspectivas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORÍAS -->
+
+    <section class="gallery-section">
+
+        <div class="gallery-container">
+
+            <div class="gallery-heading">
+
+                <div>
+                    <p class="eyebrow">COLECCIÓN</p>
+                    <h2>EXPLORAR FOTOGRAFÍAS</h2>
+                </div>
+
+                <p class="gallery-description">
+                    Explora las diferentes categorías de mi colección.
+                </p>
+
+            </div>
+
+
+            <div class="photo-filters">
+
+                <button class="filter active" data-filter="todos">
+                    <i class="fa-solid fa-border-all"></i>
+                    Todos
+                </button>
+
+                <button class="filter" data-filter="autos">
+                    <i class="fa-solid fa-car"></i>
+                    Autos
+                </button>
+
+                <button class="filter" data-filter="paisajes">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    Paisajes
+                </button>
+
+                <button class="filter" data-filter="urbano">
+                    <i class="fa-solid fa-city"></i>
+                    Urbano
+                </button>
+
+                <button class="filter" data-filter="nocturno">
+                    <i class="fa-solid fa-moon"></i>
+                    Nocturno
+                </button>
+
+                <button class="filter" data-filter="eventos">
+                    <i class="fa-regular fa-calendar"></i>
+                    Eventos
+                </button>
+
+            </div>
+
+
+            <!-- GALERÍA -->
+
+            <div class="photo-gallery">
+
+                <article class="photo-card"
+                    data-category="autos"
+                    data-title="Automotive Photography"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/fotografia.png" alt="Fotografía automotriz">
+
+                    <div class="photo-card-overlay">
+                        <span>01 · AUTOS</span>
+                        <h3>Automotive Photography</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="nocturno"
+                    data-title="Noche Japonesa"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/hero.png" alt="Fotografía nocturna">
+
+                    <div class="photo-card-overlay">
+                        <span>02 · NOCTURNO</span>
+                        <h3>Noche Japonesa</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="autos"
+                    data-title="Street Automotive"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/stgg.png" alt="Fotografía de automóvil">
+
+                    <div class="photo-card-overlay">
+                        <span>03 · AUTOS</span>
+                        <h3>Street Automotive</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="paisajes"
+                    data-title="Fuji"
+                    data-location="Japón"
+                    data-year="2026">
+
+                    <img src="assets/img/hero.png" alt="Paisaje">
+
+                    <div class="photo-card-overlay">
+                        <span>04 · PAISAJES</span>
+                        <h3>Fuji</h3>
+                        <p>Japón · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="urbano"
+                    data-title="City Lights"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/portafolio.png" alt="Fotografía urbana">
+
+                    <div class="photo-card-overlay">
+                        <span>05 · URBANO</span>
+                        <h3>City Lights</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="nocturno"
+                    data-title="After Dark"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/minecraft.png" alt="Fotografía nocturna">
+
+                    <div class="photo-card-overlay">
+                        <span>06 · NOCTURNO</span>
+                        <h3>After Dark</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="eventos"
+                    data-title="Moments"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/database.png" alt="Fotografía de evento">
+
+                    <div class="photo-card-overlay">
+                        <span>07 · EVENTOS</span>
+                        <h3>Moments</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+
+                <article class="photo-card"
+                    data-category="urbano"
+                    data-title="Urban Night"
+                    data-location="Costa Rica"
+                    data-year="2026">
+
+                    <img src="assets/img/arduino.png" alt="Fotografía urbana">
+
+                    <div class="photo-card-overlay">
+                        <span>08 · URBANO</span>
+                        <h3>Urban Night</h3>
+                        <p>Costa Rica · 2026</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIGHTBOX -->
+
+    <div class="lightbox" id="lightbox">
+
+        <div class="footer-logo">
+            <img src="../assets/img/logo.png" alt="Logo NIRO">
+        </div>
+
+        <button class="lightbox-prev" aria-label="Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="lightbox-content">
+
+            <img id="lightbox-image" src="" alt="">
+
+            <div class="lightbox-info">
+
+                <span id="lightbox-category"></span>
+
+                <h2 id="lightbox-title"></h2>
+
+                <p id="lightbox-location"></p>
+
+            </div>
+
+        </div>
+
+        <button class="lightbox-next" aria-label="Siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-brand">
+        <strong>[NIRO]</strong>
+        <p>Desarrollador / Estudiante</p>
+    </div>
+
+    <div class="footer-social">
+
+        <a href="#" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="#" aria-label="Discord">
+            <i class="fa-brands fa-discord"></i>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-copy">
+        <p>© 2026 NIRO.COM</p>
+        <p>Tecnología, autos y buenas historias.</p>
+    </div>
+
+</footer>
+
+
+<script src="js/fotografia.js"></script>
+
+</body>
+</html>
