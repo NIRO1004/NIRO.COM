@@ -768,3 +768,398 @@ footer {
     }
 
 }
+
+/* =========================================================
+   FOTOGRAFÍA - RESPONSIVE MÓVIL
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* HERO */
+
+    .photo-hero {
+        min-height: 430px;
+    }
+
+    .photo-hero-overlay {
+        padding: 50px 20px 45px;
+    }
+
+    .photo-hero-content {
+        width: 100%;
+    }
+
+    .photo-hero h1 {
+        font-size: clamp(48px, 15vw, 72px);
+        letter-spacing: -3px;
+        line-height: .9;
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* GALERÍA */
+
+    .gallery-section {
+        padding: 55px 0 70px;
+    }
+
+    .gallery-container {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+    }
+
+
+    /* ENCABEZADO */
+
+    .gallery-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .gallery-heading h2 {
+        font-size: clamp(34px, 10vw, 48px);
+        line-height: .95;
+        letter-spacing: -2px;
+    }
+
+    .gallery-description {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* FILTROS */
+
+    .photo-filters {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 6px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .photo-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter {
+        flex: 0 0 auto;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+
+    /* GALERÍA DE FOTOS */
+
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 280px;
+        gap: 12px;
+    }
+
+    .photo-card {
+        width: 100%;
+        height: 280px;
+        min-height: 0;
+    }
+
+    .photo-card:nth-child(1),
+    .photo-card:nth-child(6) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* INFORMACIÓN DE LAS FOTOS */
+
+    .photo-card-overlay {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .photo-card-overlay span {
+        font-size: 10px;
+    }
+
+    .photo-card-overlay h3 {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+
+    .photo-card-overlay p {
+        font-size: 12px;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: 85vh;
+    }
+
+    .lightbox-content img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 65vh;
+        object-fit: contain;
+    }
+
+    .lightbox-info {
+        padding-top: 12px;
+    }
+
+    .lightbox-info h2 {
+        font-size: 20px;
+    }
+
+    .lightbox-info p {
+        font-size: 12px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .gallery-container {
+        width: calc(100% - 24px);
+    }
+
+    .photo-hero {
+        min-height: 390px;
+    }
+
+    .photo-hero-overlay {
+        padding: 45px 15px 35px;
+    }
+
+    .section-number {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .section-number span {
+        width: 35px;
+        height: 6px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .photo-hero h1 {
+        font-size: clamp(45px, 15vw, 60px);
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .gallery-section {
+        padding: 45px 0 60px;
+    }
+
+    .gallery-heading h2 {
+        font-size: clamp(30px, 10vw, 42px);
+    }
+
+    .gallery-description {
+        font-size: 13px;
+    }
+
+    .photo-filters {
+        margin-bottom: 18px;
+    }
+
+    .filter {
+        padding: 9px 12px;
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .photo-gallery {
+        grid-auto-rows: 250px;
+        gap: 10px;
+    }
+
+    .photo-card {
+        height: 250px;
+        border-radius: 6px;
+    }
+
+    .photo-card-overlay {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .photo-card-overlay h3 {
+        font-size: 16px;
+    }
+
+    .photo-card-overlay p {
+        font-size: 11px;
+    }
+
+    .lightbox {
+        padding: 10px;
+    }
+
+    .lightbox-content img {
+        max-height: 60vh;
+    }
+
+    .lightbox-info h2 {
+        font-size: 18px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONOS MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .gallery-container {
+        width: calc(100% - 20px);
+    }
+
+    .photo-hero {
+        min-height: 370px;
+    }
+
+    .photo-hero h1 {
+        font-size: 44px;
+    }
+
+    .photo-gallery {
+        grid-auto-rows: 220px;
+    }
+
+    .photo-card {
+        height: 220px;
+    }
+
+    .filter {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .photo-card-overlay h3 {
+        font-size: 15px;
+    }
+}
+
+/* =========================================================
+   PREVENIR SCROLL HORIZONTAL ACCIDENTAL
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* El scroll horizontal solamente se permite dentro de los filtros */
+.photo-filters {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Evita que las tarjetas provoquen desbordamiento */
+.gallery-section,
+.gallery-container,
+.photo-gallery,
+.photo-card {
+    max-width: 100%;
+}
+
+/* Las imágenes nunca pueden superar su tarjeta */
+.photo-card img {
+    max-width: 100%;
+}
+
+/* El menú móvil tampoco debe crear ancho adicional */
+.mobile-nav {
+    max-width: 100vw;
+}
