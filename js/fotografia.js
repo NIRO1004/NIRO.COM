@@ -226,3 +226,15 @@ if (menuToggle && mobileNav) {
     });
 
 }
+
+const lightboxClose = document.querySelector(".lightbox-close");
+
+lightboxClose.addEventListener("click", () => {
+    lightbox.classList.remove("open");
+});
+
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove("open");
+    }
+});
