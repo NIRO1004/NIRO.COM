@@ -21,7 +21,7 @@ document.addEventListener(
 
         const navLinks =
             document.querySelectorAll(
-                ".site-header nav a:not(.cv-button)"
+                ".desktop-nav a:not(.cv-button), .mobile-nav a:not(.cv-button)"
             );
 
 
@@ -176,82 +176,6 @@ document.addEventListener(
     }
 );
 
-/* PHOTOGRAPHY PREVIEW */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".photo-slide");
-    const thumbs = document.querySelectorAll(".photo-thumb");
-    const dots = document.querySelectorAll(".photo-dot");
-    const categories = document.querySelectorAll(".photo-category");
-    const prev = document.querySelector(".photo-prev");
-    const next = document.querySelector(".photo-next");
-
-    if (!slides.length) return;
-
-    let current = 0;
-
-    function updateGallery(index) {
-        current = index;
-
-        slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === current);
-        });
-
-        thumbs.forEach((thumb, i) => {
-            thumb.classList.toggle("active", i === current);
-        });
-
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === current);
-        });
-    }
-
-    next.addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        updateGallery(current);
-    });
-
-    prev.addEventListener("click", () => {
-        current = (current - 1 + slides.length) % slides.length;
-        updateGallery(current);
-    });
-
-    thumbs.forEach((thumb, index) => {
-        thumb.addEventListener("click", () => {
-            updateGallery(index);
-        });
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            updateGallery(index);
-        });
-    });
-
-    categories.forEach(category => {
-        category.addEventListener("click", () => {
-            categories.forEach(item => {
-                item.classList.remove("active");
-            });
-
-            category.classList.add("active");
-
-            const selectedCategory = category.dataset.category;
-
-            slides.forEach(slide => {
-                if (
-                    selectedCategory === "todos" ||
-                    slide.dataset.category === selectedCategory
-                ) {
-                    slide.style.display = "";
-                } else {
-                    slide.style.display = "none";
-                }
-            });
-        });
-    });
-});
-
 /* =========================================================
    MENÚ RESPONSIVE
    ========================================================= */
@@ -272,28 +196,302 @@ document.addEventListener("DOMContentLoaded", () => {
             isOpen ? "true" : "false"
         );
 
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Cerrar menú" : "Abrir menú"
+        );
+
         menuToggle.innerHTML = isOpen
             ? '<i class="fa-solid fa-xmark"></i>'
             : '<i class="fa-solid fa-bars"></i>';
-
     });
 
     mobileNav.querySelectorAll("a").forEach(link => {
-
         link.addEventListener("click", () => {
-
             mobileNav.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menú");
+            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+    });
+});
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
+/* =========================================================
+   PHOTOGRAPHY PREVIEW
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slides = Array.from(
+        document.querySelectorAll(".photo-slide")
+    );
+
+    const dotsContainer =
+        document.querySelector(".photography-dots");
+
+    const thumbsContainer =
+        document.querySelector(".photography-thumbnails");
+
+    const categories =
+        document.querySelectorAll(".photo-category");
+
+    const prev =
+        document.querySelector(".photo-prev");
+
+    const next =
+        document.querySelector(".photo-next");
+
+    const photography =
+        document.querySelector(".photography");
+
+    if (!slides.length) return;
+
+    let current = 0;
+    let filteredSlides = [...slides];
+    let autoPlay = null;
+
+
+    /* =====================================================
+       DOTS
+       ===================================================== */
+
+    function createDots() {
+
+        if (!dotsContainer) return;
+
+        dotsContainer.innerHTML = "";
+
+        filteredSlides.forEach((slide, index) => {
+
+            const dot = document.createElement("button");
+
+            dot.type = "button";
+            dot.className = "photo-dot";
+            dot.setAttribute(
+                "aria-label",
+                `Fotografía ${index + 1}`
             );
 
-            menuToggle.innerHTML =
-                '<i class="fa-solid fa-bars"></i>';
+            dot.addEventListener("click", () => {
+                current = index;
+                updateGallery();
+                restartAutoPlay();
+            });
 
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+
+    /* =====================================================
+       MINIATURAS
+       ===================================================== */
+
+    function createThumbnails() {
+
+        if (!thumbsContainer) return;
+
+        thumbsContainer.innerHTML = "";
+
+        filteredSlides.forEach((slide, index) => {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+            button.className = "photo-thumb";
+
+            const image =
+                slide.querySelector("img");
+
+            if (image) {
+
+                const thumb =
+                    document.createElement("img");
+
+                thumb.src = image.src;
+                thumb.alt = image.alt || "";
+
+                button.appendChild(thumb);
+            }
+
+            button.addEventListener("click", () => {
+                current = index;
+                updateGallery();
+                restartAutoPlay();
+            });
+
+            thumbsContainer.appendChild(button);
+        });
+    }
+
+
+    /* =====================================================
+       ACTUALIZAR GALERÍA
+       ===================================================== */
+
+    function updateGallery() {
+
+        if (!filteredSlides.length) return;
+
+        if (current < 0 || current >= filteredSlides.length) {
+            current = 0;
+        }
+
+        const activeSlide =
+            filteredSlides[current];
+
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+            slide.style.display = "none";
         });
 
+        activeSlide.classList.add("active");
+        activeSlide.style.display = "block";
+
+        const dots =
+            dotsContainer
+                ? dotsContainer.querySelectorAll(".photo-dot")
+                : [];
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle(
+                "active",
+                index === current
+            );
+        });
+
+        const thumbs =
+            thumbsContainer
+                ? thumbsContainer.querySelectorAll(".photo-thumb")
+                : [];
+
+        thumbs.forEach((thumb, index) => {
+            thumb.classList.toggle(
+                "active",
+                index === current
+            );
+        });
+    }
+
+
+    /* =====================================================
+       SIGUIENTE / ANTERIOR
+       ===================================================== */
+
+    function nextPhoto() {
+
+        if (!filteredSlides.length) return;
+
+        current =
+            (current + 1) % filteredSlides.length;
+
+        updateGallery();
+    }
+
+    function previousPhoto() {
+
+        if (!filteredSlides.length) return;
+
+        current =
+            (current - 1 + filteredSlides.length) %
+            filteredSlides.length;
+
+        updateGallery();
+    }
+
+
+    /* =====================================================
+       FLECHAS
+       ===================================================== */
+
+    next?.addEventListener("click", () => {
+        nextPhoto();
+        restartAutoPlay();
     });
 
+    prev?.addEventListener("click", () => {
+        previousPhoto();
+        restartAutoPlay();
+    });
+
+
+    /* =====================================================
+       FILTROS
+       ===================================================== */
+
+    categories.forEach(category => {
+
+        category.addEventListener("click", () => {
+
+            categories.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            category.classList.add("active");
+
+            const selectedCategory =
+                category.dataset.category;
+
+            if (selectedCategory === "todos") {
+                filteredSlides = [...slides];
+            } else {
+                filteredSlides = slides.filter(
+                    slide =>
+                        slide.dataset.category ===
+                        selectedCategory
+                );
+            }
+
+            current = 0;
+
+            createDots();
+            createThumbnails();
+            updateGallery();
+            restartAutoPlay();
+        });
+    });
+
+
+    /* =====================================================
+       AUTOPLAY
+       ===================================================== */
+
+    function startAutoPlay() {
+
+        clearInterval(autoPlay);
+
+        autoPlay = setInterval(() => {
+            nextPhoto();
+        }, 4000);
+    }
+
+    function restartAutoPlay() {
+        startAutoPlay();
+    }
+
+
+    /* =====================================================
+       PAUSAR EN ESCRITORIO
+       ===================================================== */
+
+    photography?.addEventListener(
+        "mouseenter",
+        () => clearInterval(autoPlay)
+    );
+
+    photography?.addEventListener(
+        "mouseleave",
+        () => startAutoPlay()
+    );
+
+
+    /* =====================================================
+       INICIALIZAR
+       ===================================================== */
+
+    createDots();
+    createThumbnails();
+    updateGallery();
+    startAutoPlay();
 });
